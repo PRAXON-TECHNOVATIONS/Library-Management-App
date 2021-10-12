@@ -4,7 +4,7 @@ app_name = "library_management"
 app_title = "Library Management"
 app_publisher = "Yanky"
 app_description = "Simple app to manage library"
-app_icon = "'octicon octicon-book'"
+app_icon = "octicon octicon-book"
 app_color = "#589494"
 app_email = "tamocha44@gmail.com"
 app_license = "MIT"
@@ -173,3 +173,4 @@ user_data_fields = [
 # 	"library_management.auth.validate"
 # ]
 
+fixtures = ['Custom Field']

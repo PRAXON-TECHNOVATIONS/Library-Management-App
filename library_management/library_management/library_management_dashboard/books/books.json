@@ -1,0 +1,25 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Books Data",
+   "width": "Half"
+  },
+  {
+   "chart": "Books Issued-1",
+   "width": "Half"
+  }
+ ],
+ "creation": "2021-09-28 17:22:46.415106",
+ "dashboard_name": "Books",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2021-09-29 12:55:06.990141",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Books",
+ "owner": "Administrator"
+}

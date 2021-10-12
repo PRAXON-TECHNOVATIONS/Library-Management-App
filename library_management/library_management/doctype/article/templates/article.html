@@ -1,0 +1,28 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+
+<div class="py-auto row">
+    <div class="col-sm-2">
+        <img src="{{ image }}" alt="{{ title }}">
+    </div>
+    <div class="col">
+        <a href="/Article/{{ doc.name }}"><h2>{{ title }}</h2></a>
+        <p class="lead">By {{ author }}</p>
+        <div>
+            {%- if status == 'Available' -%}
+            <span class="badge badge-success">Available</span>
+            {%- elif status == 'Issued' -%}
+            <span class="badge badge-primary">Issued</span>
+            {%- endif -%}
+        </div>
+        <div class="mt-auto">
+            <div>Publisher: <strong>{{ publisher }}</strong></div>
+            <div>ISBN: <strong>{{ isbn }}</strong></div>
+        </div>
+        <p>{{ (doc.description[:300] + "...") if doc.description|length > 200 else doc.description }}</p>
+    </div>
+</div>
+{% endblock %}
+
+<!-- this is a sample default web page template -->

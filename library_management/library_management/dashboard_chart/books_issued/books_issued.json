@@ -1,0 +1,32 @@
+{
+ "chart_name": "Books Issued",
+ "chart_type": "Report",
+ "creation": "2021-09-28 17:26:15.801653",
+ "custom_options": "{\"x_field\": \"title\", \"chart_type\": \"Bar\", \"y_axis_fields\": [{\"idx\": 1, \"__islocal\": true, \"name\": \"row 1\", \"y_field\": \"issued_count\", \"color\": \"#0d0c0c\"}], \"y_fields\": [\"issued_count\"], \"colors\": [\"#0d0c0c\"]}",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "filters_json": "{}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "modified": "2021-09-28 17:26:15.910675",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Books Issued",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Books Stock Report",
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "x_field": "title",
+ "y_axis": [
+  {
+   "color": "#0d0c0c",
+   "y_field": "issued_count"
+  }
+ ]
+}
