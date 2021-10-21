@@ -48,7 +48,7 @@ def get_columns():
 	columns[4] = {
 		"label": ("Total Spending"),
 		"fieldname": "total_spending",
-		"fieldtype": "currency",
+		"fieldtype": "int",
 		"width": 150
 	}
 	return columns
@@ -64,32 +64,15 @@ def get_member_data(filters) :
 
 def get_chart():
 	chart_data = {
-		"labels": [frappe.db.get_values('Library Member', 'name')],
+		"labels": frappe.db.get_list('Library Member', pluck='name'),
    		"datasets": [
         {
             'name': "Total Spending",
-            'values': [frappe.db.get_values('Library Member','total_spending')]
+            'values': frappe.db.get_list('Library Member',fields=['total_spending'],as_list=True)
         }
     ]
 }
 
-	# attributes = [d.get("fieldname") for d in columns]
-
-	# dimensions = [
-	# 	[
-	# 	value.get(attr) for value in data if value["xAxisField"] > int(fltr.xAxisField)
-	# 	] for attr in attributes
-	# ]
-	# chart_data = {
-	# 	'labels': [{
-	# 		'name': ('Library Member'), 'values': [frappe.db.get_value('Library Member', 'name')]
-	# 	}],
-	# 	'datasets': [{
-	# 		'name': ('Total Spending'), 'values': [frappe.db.get_value('Library Member', 'total_spending')]
-	# 		}
-	# 	]
-	# }
-		
 	chart = {
 		"title": "Total Spending",
 		"data": chart_data,

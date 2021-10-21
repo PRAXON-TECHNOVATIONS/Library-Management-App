@@ -4,7 +4,7 @@ import json
 
 @frappe.whitelist()
 def createArticles():
-    data = json.loads(frappe.request.data) 
+    data = json.loads(frappe.request.data)
     frappe.msgprint(data)
     if not frappe.db.exists('Article', {'isbn': data.get('isbn')}):
         article = frappe.new_doc('Article')

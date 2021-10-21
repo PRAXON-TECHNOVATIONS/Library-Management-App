@@ -16,7 +16,8 @@ def execute(filters=None):
 		"issued_count":article.get("total_quantity") - article.get("stock")
 		}
 		data.append(temp_dict)
-	return columns, data
+		chart = get_chart()	
+	return columns, data, None, chart
 
 def get_columns():
 	columns = ["" for column in range(5)]
@@ -57,3 +58,26 @@ def get_article_data(filters) :
 		article_data  = frappe.db.sql("""select title, isbn, stock, total_quantity from tabArticle """, as_dict=1) 
 	
 	return article_data
+
+def get_chart():
+	chart_data = {
+		"labels": frappe.db.get_list('Article', fields=['title'],as_list=True),
+   		"datasets": [
+        {
+            'name': "Stock",
+            'values': frappe.db.get_list('Article',fields=['stock'],as_list=True)
+		},
+		{
+			'name': "Total Quantity",
+            'values': frappe.db.get_list('Article',fields=['total_quantity'],as_list=True)
+        }
+    ]
+}
+	chart = {
+		"title": "Book Avialability",
+		"data": chart_data,
+		"type": 'bar',
+		"height": 250,
+		"color": ['#4463F0', '#7cd6fd']
+	}
+	return chart
