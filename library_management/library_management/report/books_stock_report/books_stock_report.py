@@ -3,6 +3,7 @@
 
 import frappe
 
+
 def execute(filters=None):
 	columns, data = [], []
 	columns = get_columns()
@@ -18,6 +19,7 @@ def execute(filters=None):
 		data.append(temp_dict)
 		chart = get_chart()	
 	return columns, data, None, chart
+
 
 def get_columns():
 	columns = ["" for column in range(5)]
@@ -50,6 +52,7 @@ def get_columns():
 	}
 	return columns
 
+
 def get_article_data(filters) :
 	if filters:
 		query = "select title, isbn, stock, total_quantity from tabArticle where title = '" + str(filters.get("title_filter")) + "'"
@@ -58,6 +61,7 @@ def get_article_data(filters) :
 		article_data  = frappe.db.sql("""select title, isbn, stock, total_quantity from tabArticle """, as_dict=1) 
 	
 	return article_data
+
 
 def get_chart():
 	chart_data = {
