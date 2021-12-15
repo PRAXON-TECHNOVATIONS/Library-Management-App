@@ -56,10 +56,10 @@ def get_columns():
 def get_member_data(filters) :
 	if filters:
 		query = "select name, full_name, email, phone, total_spending from `tabLibrary Member` where name = '" + str(filters.get("member_filter")) + "'"
-		member_data  = frappe.db.sql(query, as_dict=1) 
+		member_data  = frappe.db.sql(query, as_dict=1)
 	else:
-		member_data  = frappe.db.sql("""select name, full_name, email, phone, total_spending from `tabLibrary Member` """, as_dict=1) 
-	
+		member_data  = frappe.db.sql("""select name, full_name, email, phone, total_spending from `tabLibrary Member` """, as_dict=1)
+
 	return member_data
 
 def get_chart():
