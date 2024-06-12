@@ -35,7 +35,8 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Transaction Type",
-   "options": "Issue\nReturn"
+   "options": "Issue\nReturn",
+   "set_only_once": 1
   },
   {
    "fieldname": "amended_from",
@@ -109,7 +110,8 @@
    "allow_on_submit": 1,
    "fieldname": "return_date",
    "fieldtype": "Date",
-   "label": "Return Date"
+   "label": "Return Date",
+   "mandatory_depends_on": "eval:doc.type==\"Return\""
   },
   {
    "allow_on_submit": 1,
@@ -122,10 +124,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2021-09-28 15:18:29.326370",
+ "modified": "2024-06-12 13:12:15.857246",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Transaction",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -155,6 +158,7 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "title_field": "library_member",
  "track_changes": 1
 }
